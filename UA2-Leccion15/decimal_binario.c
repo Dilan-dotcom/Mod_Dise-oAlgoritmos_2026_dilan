@@ -20,17 +20,18 @@ int main(void){//esta funcion no recibe  ningun parametro del sistema
     //division entre 1: el residuo es el bit de las unidades->b0=1
     b0 = cociente % 2;
     //muestra el paso de 13 / 2/6 residuo 1 (osea 13 dividido entre 2 da 6 y residuo 1)
-    printf( "2d% / 2 = %d residuo %d  \n",cociente , cociente / 2, b0);
+    printf( "%2d / 2 = %d residuo %d \n",cociente , cociente / 2, b0);
     //muestra la division 2: 6/2=2 rsidio 0 , b1=0
+    cociente= cociente/2;
     b1 = cociente % 2;
     //muestra el paso 13 / 2= 6 residuo 1
     printf("%d / 2 = %d residuo %d\n",cociente, cociente /2, b1);
-
+    cociente= cociente/2;
      //muestra la division 2: 6/2=2 rsidio 0 , b1=0
     b2 = cociente % 2;
     //muestra el paso 3/2= 6 residuo 1 b2= 0
     printf("%d / 2 = %d residuo %d\n",cociente, cociente /2, b2);
-
+    cociente= cociente/2;
      //muestra la division 2: 1/2=2 rsidio 0 , b3=0
     b3 = cociente % 2;
     //muestra el paso 13 / 2= 6 residuo 1
