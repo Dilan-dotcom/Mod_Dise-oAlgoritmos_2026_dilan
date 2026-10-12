@@ -23,11 +23,11 @@ int main (void){
             printf("Precio del producto");
             scanf("%lf", &precio);//->1500 
 
-            if (precio>=0) {
+            if (precio<=0) {
                 printf("Precio invalodo\n");
             
             }
-            while(precio<=0)
+            while(precio>=0)
             
                 productos++;//cuenta productos (suma 1)
                 total += precio;//suma precio
@@ -47,7 +47,7 @@ int main (void){
                     printf("opcion invalida");
                 }
                 //repite el numero mientras no se eliga 0
-    } while (opcion = 0);
+    } while (opcion != 0);
     return 0;
 }
         
