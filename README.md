@@ -88,7 +88,7 @@ Las capturas de pantalla van en la subcarpeta `capturas/` de cada sesión
 | Sesión | Tema                                              | Qué aprendí                            |                Evidencia                 | Estado |
 | :----: | :------------------------------------------------ | :------------------------------------- | :--------------------------------------: | :----: |
 |  S01   | Lógica computacional, compilador e intérprete     | _(escribir aquí con palabras propias)_ |             [ver](UA1/S01/)              |   ⬜   |
-|  S02   | Algoritmos y pseudocódigo                         |                                        |             [ver](UA1/S02/)              |   ⬜   |
+|  S02   | Algoritmos y pseudocódigo                         |VIMOS PSEINT|             [ver](UA1/S02/)              |   ⬜   |
 |  S03   | Lenguajes de alto y bajo nivel                    |                                        |             [ver](UA1/S03/)              |   ⬜   |
 |  S04   | Metodología de solución de problemas              |                                        |             [ver](UA1/S04/)              |   ⬜   |
 |  S05   | Entrada, proceso, salida y tipos de datos         |                                        |             [ver](UA1/S05/)              |   ⬜   |
@@ -108,10 +108,10 @@ Las capturas de pantalla van en la subcarpeta `capturas/` de cada sesión
 
 | Sesión  | Tema                                         | Qué aprendí |                  Evidencia                   | Estado |
 | :-----: | :------------------------------------------- | :---------- | :------------------------------------------: | :----: |
-|   S14   | Sistemas numéricos                           |             |               [ver](UA2/S14/)                |   ⬜   |
-|   S15   | Control de versiones con git y GitHub        |             |               [ver](UA2/S15/)                |   ⬜   |
-|   S16   | Formato de un programa en C y compilación    |             |               [ver](UA2/S16/)                |   ⬜   |
-|   S17   | Variables, constantes y entrada/salida       |             |               [ver](UA2/S17/)                |   ⬜   |
+|   S14   | Sistemas numéricos                           |Prueba del entorno|[ver](AU-2/S14/Captura%20de%20pantalla%202026-10-12%20171036.png)|   ⬜   |
+|   S15   | Control de versiones con git y GitHub        |Creacion y configuracion de repositorio|[ver](AU-2/S15/Captura%20de%20pantalla%202026-10-12%20170832.png)|   ⬜   |
+|   S16   | Formato de un programa en C y compilación    |Instalacion de C y comparacion con temas pasado|[ver](AU-2/S16/Captura%20de%20pantalla%202026-10-12%20170726.png)|   ⬜   |
+|   S17   | Variables, constantes y entrada/salida       | tipos de variables de ejemplo en pseint a C|[ver](AU-2/S17/Captura%20de%20pantalla%202026-10-12%20170431.png)|   ⬜   |
 |   S18   | Operadores, casting e if … else              |tipos de operaodresY PRACTICA|[ver](AU-2/S18/Captura%20de%20pantalla%202026-10-09%20evidencia.png)|⬜|
 |   S19   | Ciclos y switch                              |ciclos usando while,do y for|               [ver](AU-2/S19/Captura%20de%20pantalla%20S19.png)|⬜|
 |   S20   | Arreglos, matrices y cadenas                 |             |               [ver](UA2/S20/)                |   ⬜   |
