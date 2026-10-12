@@ -99,7 +99,7 @@ Las capturas de pantalla van en la subcarpeta `capturas/` de cada sesión
 |  S10   | Decisión simple y doble                           |                                        |             [ver](UA1/S10/)              |   ⬜   |
 |  S11   | Operadores lógicos, decisiones compuestas y Según |                                        |             [ver](UA1/S11/)              |   ⬜   |
 |  S12   | Ciclos, validación de datos e informe             |                                        |             [ver](UA1/S12/)              |   ⬜   |
-|  S13   | **Actividad de comprobación 1**                   |                                        | [ver](actividades/A1_Analisis_problema/) |   ⬜   |
+|  S13   | **Actividad de comprobación 1**                   |actividad 1 de comprobacion del modulo| [ver](actividades/A1_Analisis_problema/) |   ⬜   |
 
 </details>
 
