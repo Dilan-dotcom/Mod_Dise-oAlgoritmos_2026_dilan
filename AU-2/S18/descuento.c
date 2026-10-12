@@ -2,10 +2,10 @@
 #include <stdio.h>
 int main (void){
 
-    double compra ,  descuento,  total;
+    double compra,  descuento,  total;
 
     printf("Ingrese el monto comprado :");
-    scanf("lf\n",compra);
+    scanf("%lf", &compra);
 
     if (compra >=50000){
         descuento=compra*0.10;
@@ -14,8 +14,8 @@ int main (void){
     }
     total=compra-descuento;
 
-    printf("Total comprado:%f\n",compra);
-    printf("Total descuento:%f\n",descuento);
-    printf("Total a pagar :%f\n",total);
-
+    printf("Total comprado :%.2f\n",compra);
+    printf("Total descuento :%.2f\n",descuento);
+    printf("Total a pagar: %.2f\n",total);
+    return 0;
 }
