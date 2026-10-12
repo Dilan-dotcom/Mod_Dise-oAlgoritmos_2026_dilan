@@ -36,14 +36,17 @@ int main (void){
                 //muestra el avance
                 printf("productos :%d total :%.2f\n" ,productos , total);
                     break;
+
                     case 3:
                     productos = 0;
                     total = 0;
                     break;
+
                     case 0:
                     printf("caja cerrada");
                     break;
                     default:
+                    
                     printf("opcion invalida");
                 }
                 //repite el numero mientras no se eliga 0
