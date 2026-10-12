@@ -26,7 +26,7 @@ int main (void){
     printf("Billetes de 5000 :%d\n",cantidad);
 
         cantidad = monto/ 2000;
-   monto %= 2000;
+    monto %= 2000;
     printf("Billetes de 2000 :%d\n",cantidad);
 
     cantidad = monto / 1000;
