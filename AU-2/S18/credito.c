@@ -30,12 +30,21 @@ int main() {
     printf("Tiene fiador? (S/N)\n");
     scanf(" %c", &respFiador);
 
-    capacidadPago = (salario >= (cuota * 3));
-    tieneDeudas = (respDeudas == 'S' || respDeudas == 's');
-    tieneFiador = (respFiador == 'S' || respFiador == 's');
+    // Validamos si lo que ingresó el usuario NO es ninguna de las opciones permitidas
+    if (respDeudas != 'S' && respDeudas != 's' && respDeudas != 'N' && respDeudas != 'n') {
+    printf("Error: Ingrese un dato valido (S/N)\n");
+    scanf(" %c", &respDeudas);
+}
 
-    
-    aprobado = capacidadPago && (!tieneDeudas) && (antiguedad >= 1 || tieneFiador);
+    capacidadPago = (salario >= (cuota * 3));
+    tieneDeudas = (respDeudas == 'S' || respDeudas == 's');//la variable es verdadera si el usuario escribe A O B
+    tieneFiador = (respFiador == 'S' || respFiador == 's');//recuerda estamos haciendo una comparacion no asignando un valor por eso usamos ==
+
+    //1-Pedir los datos (printf y scanf).  2- validar los datos 3- calcular la vriable logica 4-soltar datos
+
+
+
+
 
     // Estructura condicional: si la variable 'aprobado' es verdadera (es 1)
     if (aprobado) {
