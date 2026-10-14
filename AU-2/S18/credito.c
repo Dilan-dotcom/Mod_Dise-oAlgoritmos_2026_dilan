@@ -43,9 +43,6 @@ int main() {
     //1-Pedir los datos (printf y scanf).  2- validar los datos 3- calcular la vriable logica 4-soltar datos
 
 
-
-
-
     // Estructura condicional: si la variable 'aprobado' es verdadera (es 1)
     if (aprobado) {
         printf("Credito aprobado\n");
