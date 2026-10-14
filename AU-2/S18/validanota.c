@@ -3,7 +3,7 @@
 #include <stdio.h> 
 
 int main(void) {
-    // Definimos la variable 'nota' como un número entero 
+    // Definimos la variable nota como un número entero 
     double nota;
     // La estructura "Repetir" de PSeInt se escribe en C como "do {"(lo appuntaste porque se te olvido )
     do {
