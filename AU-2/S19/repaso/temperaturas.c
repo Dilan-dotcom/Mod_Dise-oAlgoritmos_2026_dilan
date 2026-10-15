@@ -22,23 +22,23 @@ int main(void) {
     int maxima = MINIMA;   // mayor temperatura (inicia en el minimo posible)
     int calurosos = 0;     // CONTADOR de dias con mas de 30 grados
     int i;                 // contador del for: dia actual (0 a 6)
-    float promedio;        // promedio de la semana, con decimales
+    float promedio;        // promedio de la semana, con decimales//preguntar si se puede repara el float 
 
     printf("=== Temperaturas de la semana ===\n");
     // FOR: una vuelta por dia -> i = 0, 1, ..., 6
-    for (i = 1; i < DIAS; i++) {
+    for (i = 0; i < DIAS; i++) {// el i deberia ser cero creo
         // DO-WHILE: pide el dato y lo repite mientras este fuera de rango
         do {
             printf("Temperatura dia %d: ", i + 1);
-            scanf("%d", temp);
+            scanf("%d", &temp);//faltaba el &
             if (temp < MINIMA || temp > MAXIMA)
                 printf("  Fuera de rango (%d a %d)\n", MINIMA, MAXIMA);
-        } while (temp >= MINIMA && temp <= MAXIMA);
+        } while (temp < MINIMA && temp > MAXIMA);//estan alrevez creo original while (temp >= MINIMA && temp <= MAXIMA);
 
         suma = suma + temp;           // acumula -> 28, 59, 88, 
-        if (temp > maxima);            // guarda la mayor -> 33
+        if (temp > maxima)//creo que tenia ; y no llevan eso los if            // guarda la mayor -> 33
             maxima = temp;
-        if (temp > 30);               // cuenta los calurosos -> 31 y 33
+        if (temp > 30)            // cuenta los calurosos -> 31 y 33
             calurosos++;
     }
 
