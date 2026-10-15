@@ -26,7 +26,7 @@ int main(void) {
 
     printf("=== Temperaturas de la semana ===\n");
     // FOR: una vuelta por dia -> i = 0, 1, ..., 6
-    for (i = 0; i < DIAS; i++) {// el i deberia ser cero creo
+    for (i = 0; i < DIAS; i++) {// el i deberia ser cero creo que daria 6 vueltas en vez de 7
         // DO-WHILE: pide el dato y lo repite mientras este fuera de rango
         do {
             printf("Temperatura dia %d: ", i + 1);
