@@ -22,7 +22,7 @@ int main(void) {
             printf("Cafe 1 kg: 12 unidades a 4500.00\n");
             
             // Calculamos el valor de este producto (unidades * precio) y lo sumamos al acumulador
-            totalInventario += (12 * 4500.00);
+            totalInventario += 12 * 4500.00;
             
         } else {
             // Si el código no coincide con ninguno registrado

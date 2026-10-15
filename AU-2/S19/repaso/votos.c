@@ -3,6 +3,7 @@
 Cualquier otro número es voto nulo. Al final se muestra una barra de * con los votos del candidato*/
 
 #include <stdio.h>      //printf y scanf (libreria de entradas y salidas)
+#include <stdlib.h>     //fumcion pause 
 #define FIN 0           //se definen e incializan constantes 
 
 int main(void) {        //es la función principal
