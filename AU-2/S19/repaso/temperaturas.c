@@ -36,7 +36,7 @@ int main(void) {
         } while (temp >= MINIMA && temp <= MAXIMA);
 
         suma = suma + temp;           // acumula -> 28, 59, 88, 
-        if (temp > maxima)            // guarda la mayor -> 33
+        if (temp > maxima);            // guarda la mayor -> 33
             maxima = temp;
         if (temp > 30);               // cuenta los calurosos -> 31 y 33
             calurosos++;

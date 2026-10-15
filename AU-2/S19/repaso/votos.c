@@ -1,80 +1,90 @@
-//el grupo va aelegir al representante entre 3 cantidades cada estudiante pasa a la computadora y digita el numero del candidato , se suman los votos 
-//cualquier otro voto es voto nulo 
-#include <stdio.h>//printf y scanf
-#define FIN 0// va sin comillas
+/*El grupo va a elegir a su representante entre tres candidatos: 1 Ana, 2 Luis y 3 Sofía. Cada estudiante pasa a la computadora y digita el número de su candidato. No se sabe cuántas personas votarán: la votación termina cuando alguien digita 0.
 
-int main(void) {//funcion principal
-    int i;//contador del for interno osea una vuelta por cada asterisco 
-    int c;//candidatos que debuja el for externo 1 a 3
-    int cantidad ;//votos del candidato
-    int voto ;//numero que digita cada estudiante 
-    int total=0;//contador de votos recibidos (tanto validos como nulos )
-    int ana =0;/// de aqui para abajo todos son nulos 
-    int luis =0;
-    int sofia =0;
-    int nulos =0;
-    int mayor ;//saca el ganador 
-    int empate; //en caso de habr empate
-    printf("=====Eleccion de representantes=====\n");
-    printf("1 Ana  2 Luis  3 Sofia  (0 cierra el programa)\n\n");
+Cualquier otro número es voto nulo. Al final se muestra una barra de * con los votos del candidato*/
 
-    //lecturas previas 
-    printf("Voto :");
+#include <stdio.h>      //printf y scanf (libreria de entradas y salidas)
+#define FIN 0           //se definen e incializan constantes 
+
+int main(void) {        //es la función principal
+    int voto;           //numero que digita cada estudiante -> 1, 2, 3, otro o 0
+    int total = 0;      //contador de votos recibidos (validos como nulos).
+    int ana = 0;        //CONTADORES: de votos de Ana (candidato 1)
+    int luis = 0;
+    int sofia = 0;
+    int nulos = 0;      //CONTADOR de votos nulos
+    int c;              //candidato que dibuja el for externo 1 a 3
+    int i;              //contador del interno: una vuelta por *
+    int cantidad;       //mayor cantidad de votos
+    int mayor;          //Mayor cantidad de votos por cadidatos
+    int empatados;      //Candidatos con la misma cantidad de votos
+
+    printf("====== Eleccion de representante ======\n");
+    printf("1. Ana   2. Luis   3. Sofia   (0. Cierra)\n\n");
+
+    //LECTURAS PREVIAS
+    printf("voto: ");
     scanf("%d", &voto);
 
-    //while se repite el bucle mientras el voto no sea cero
+    //WHILE con centinela. Se repite mientras el voto no sea 0
     while (voto != FIN){
-       total++; //cuenta el voto -< 1 2 3 etc hasta el 0 que cierra el programa osea el total de votos contados 
-       //NUEVA LECTURA: sin la nueva lectura el voto no cambia y el while no termina
-    switch (voto){
-    case1 : ana++; break;
-    case2 : luis++; break;
-    case3 : sofia++; break;
-        default://cualquier otro numero osea la exepcion 
-        nulos++;
-        printf("Voto nulo\n");
+        total++;                    //cuenta el voto -> 1, 2, ...,
+
+        //SWITCH: sumar 1 al contador del candidato elegido
+        switch (voto) {
+            case 1: ana++; break;   //break: sale de switch
+            case 2: luis++; break;
+            case 3: sofia++; break;
+            default:                //cualquier otro numero -> 5
+                nulos++;
+                printf(" Voto nulo\n");
+
+        }
+        //NUEVA LECTURA: Sin la nueva lectura el voto no cambia y el while no termina
+        printf("voto: ");
+        scanf("%d", &voto);
     }
-    
-    printf("voto :");
-    scanf("%d",&voto);
+    printf("\nVotos recibidos: %d\n", total);
 
+    //FOR EXTERNO: Una vuelta por candidato - > c = 1, 2, 3
+    for (c = 1; c <= 3; c++){
+        switch (c) {
+            case 1: printf("Ana     "); cantidad = ana; break;
+            case 2: printf("Luis    "); cantidad = luis; break;
+            default: printf("Sofia   "); cantidad = sofia; break;
+        }
+        //FOR INTERNO: (anidado) un for * y otro por voto -> Ana ***
+        for (i = 1; i <= cantidad; i++){
+            printf("*");
+        }
+        printf(" (%d)\n", cantidad);
     }
 
-    //for externo una vuelta por candidato -> c=1,2,3 
+    printf("Nulos: %d\n", nulos);
 
-    for (c = 1 ; c<= 3; c++)
-    {
-    switch (c){
-    case 1:printf("Ana  "); cantidad = ana; break;
-    case 2:printf("Luis  "); cantidad = luis; break;
-    default: printf("Sofia  "); cantidad = sofia; break;
-    
+    //MAYOR de tres: el primer lugar
+    mayor = ana;
+    if (luis > mayor) mayor = luis;
+    if (sofia > mayor) mayor = sofia;
+    //empatados
+    empatados = 0;
+    if (ana == mayor) empatados++;
+    if (luis == mayor) empatados++;
+    if (sofia == mayor) empatados++;
 
-    }
-    //for anidado en este caso el interno un for  * y otro por voto -> ana*****
+    //DESICION: solo se ejecuta el primer bloque que se cumpla
+    if (mayor == 0)
+    printf("No hubo votos validos\n");
+    else if (empatados > 1)
+    printf("empate con %d votos: se repite la votacion\n", mayor);
+
+    else if (ana == mayor)
+    printf("Gana Ana con %d votos\n", mayor); //3 votos
+
+    else if (luis == mayor)
+    printf("Gana Luis con %d votos\n", mayor);
+
+    else if (sofia == mayor)
+    printf("Gana Sofia con %d votos\n", mayor);
     
-    for (i = 1; i <= cantidad; i++)
-    
-    printf("%d\n", cantidad);
-    printf("nulos :(%d)",cantidad);
+    return 0;           //fin normal del programa
 }
-if (luis>mayor) mayor=luis;
-if (sofia>mayor) mayor=sofia;
-if (ana>mayor) mayor=ana;
-//empatados
-empate =0;
-if (luis==mayor) empate++;
-if (sofia==mayor) empate++;
-if (ana==mayor) empate++;
-
-if (mayor==0)
-printf("no hubo votos validos ");
-else if (empate>1);
-
-
-
-printf ("nulos :%d",nulos);
-    return 0;
-
-}
-
