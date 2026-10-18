@@ -15,15 +15,14 @@ int main(void){
         mayor=notas[i];///si es mayor actualizamos el valor de la nota mayor
         // Comparamos si la nota actual es mayor que la que tenemos registrada como 'mayor'
        //es es el if que compara si la nota actual es mayor a la que tenemos registrada
-    if (notas[i]>mayor)
-    {
-        mayor=notas[i];//si es mayor es quien actualiza la nota 
+    if (notas[i]>mayor) {
+    mayor=notas[i];//si es mayor es quien actualiza la nota 
     }
     
     }
     double promedio=suma/N;
    //salida
-    printf("Promedio general: %.2f\n", promedio); // %.2f muestra exactamente 2 decimales
+    printf("Promedio : %.2f\n", promedio); // %.2f muestra exactamente 2 decimales
     printf("La nota mas alta es: %.1f\n", mayor);  // Muestra la nota mayor con 1 decimal
 
     return 0; // Finaliza el programa con éxito
