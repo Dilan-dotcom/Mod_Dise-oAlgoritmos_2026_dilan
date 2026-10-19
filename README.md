@@ -115,8 +115,8 @@ Las capturas de pantalla van en la subcarpeta `capturas/` de cada sesión
 |   S18   | Operadores, casting e if … else              |tipos de operaodresY PRACTICA|[ver](AU-2/S18/Captura%20de%20pantalla%202026-10-09%20evidencia.png)|⬜|
 |   S19   | Ciclos y switch                              |ciclos usando while,do y for|               [ver](AU-2/S19/Captura%20de%20pantalla%20S19.png)|⬜|
 |   S20   | Arreglos, matrices y cadenas                 |ajercicos con arrglos y matrices|               [ver](AU-2/S20/Captura%20de%20pantalla%202026-10-15%20171325.png)  |   ⬜   |
-|   S21   | Funciones                                    |             |               [ver](UA2/S21/)                |   ⬜   |
-|   S22   | Paso de parámetros por valor y por dirección |             |               [ver](UA2/S22/)                |   ⬜   |
+|   S21   | Funciones                                    |  practica de funciones |               [ver](UA2/S21/)                |   ⬜   |
+|   S22   | Paso de parámetros por valor y por dirección |practica |               [ver](UA2/S22/)                |   ⬜   |
 | S23–S24 | **Actividad de comprobación 2**              |             | [ver](actividades/A2_Mi_primera_aplicacion/) |   ⬜   |
 
 </details>
