@@ -7,7 +7,7 @@
 #define TASAIESS 0.025
 #define TASARENTA 0.10     
 #define  LIMITERENTA 800
-
+//variables
 int main (void){
     char nombre[30];         
     double salarioBruto;   
@@ -15,7 +15,7 @@ int main (void){
     double descIess;         
     double descRenta = 0;  
     double salarioNeto;
-//validacion nombrre
+//peticion de nombre y validacion del mismo
 do
 {
     printf("Nombre completo : ");
@@ -27,7 +27,7 @@ do
     }
     
 } while (strlen(nombre)==0);
-//calculos
+//solicitud de datos y parte logica
 do {
         printf("Salario bruto: ");
         scanf("%lf", &salarioBruto);
@@ -37,7 +37,7 @@ do {
         }
     } while (salarioBruto <= 0);
 
-    
+    //calculo de caja y iess
     desCaja = salarioBruto * TASACAJA;
     descIess = salarioBruto * TASAIESS;
 
