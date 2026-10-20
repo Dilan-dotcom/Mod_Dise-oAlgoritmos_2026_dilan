@@ -54,8 +54,6 @@ int main(void) {
     //calculo promedio
     promedio = sumaNotas / 3;
 
-    //calculo de la nota alta 
-    notAlta=notas[i];
     for ( i = 0; i < 3; i++){
         if (notas[i]>notAlta)
         {
@@ -78,9 +76,9 @@ int main(void) {
     for (i = 0; i < 3; i++) {
         printf("Calificacion %d: %.1f\n", i + 1, notas[i]);
     }//esta linea gera las notaas hasta la tercer
-    printf("\n");
-    printf("\n");
-    printf("\n");
+    printf("El promedio es :%.2f\n",promedio);
+    printf("La mas alta es : %.2f\n",notAlta);
+    printf("L a condicion del estudiante es : %s\n",condicion);
     //fin del programa
     return 0;
 }
