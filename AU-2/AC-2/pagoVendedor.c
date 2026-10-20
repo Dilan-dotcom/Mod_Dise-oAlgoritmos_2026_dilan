@@ -7,13 +7,14 @@
 #define TASAIESS 0.025
 #define TASARENTA 0.10     
 #define  LIMITERENTA 800
+
 int main (void){
     char nombre[30];         
     double salarioBruto;   
     double desCaja;         
     double descIess;         
-    double desc_renta = 0.0;  
-    double salario_neto;
+    double descRenta = 0;  
+    double salarioNeto;
 //validacion nombrre
 do
 {
@@ -25,7 +26,7 @@ do
         printf("Nombre invalido no se puede poner un nombre vacio : \n");
     }
     
-} while (strlen(nombre==0));
+} while (strlen(nombre)==0);
 //calculos
 do {
         printf("Salario bruto: ");
@@ -38,8 +39,21 @@ do {
 
     
     desCaja = salarioBruto * TASACAJA;
-    desCaja = salarioBruto * TASAIESS;
+    descIess = salarioBruto * TASAIESS;
 
     if (salarioBruto > LIMITERENTA) {
-        desc_renta = salarioBruto* TASARENTA;
+        descRenta = salarioBruto* TASARENTA;
     }
+    //Salario neto
+    salarioNeto=salarioBruto-(desCaja+descIess+descRenta);
+    
+    //salida de datos
+    printf("------- Comprobante de pago -------\n");
+    printf("Empleado: %s\n", nombre);
+    printf("Salario bruto: %.2f\n", salarioBruto);
+    printf("Descuento CAJA (9.5%%): %.2f\n", desCaja);
+    printf("Descuento IESS (2.5%%): %.2f\n", descIess);
+    printf("Impuesto renta (10%%): %.2f\n", descRenta);
+    printf("Salario neto: %.2f\n", salarioNeto);
+    return 0;
+}
