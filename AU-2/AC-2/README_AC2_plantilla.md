@@ -7,22 +7,22 @@
 ## Problema 1 · Nómina (AC2_P1_Nomina.c)
 
 | Datos de entrada | Proceso | Datos de salida | Limitaciones |
-|nombre del empleado y salario|Validar que las ventas de cada semana no sean negativas (si lo son, se vuelven a pedir) sumar las 4 semanas para obtener las ventas totales del mes calcular la comisión multiplicando las ventas por el 5% verificar si las ventas superan los 2000; si es así, se le suma un bono de 50 calcular la retención aplicando el 2% sobre la suma de (comisión + bono).|salario bruto,descuento,IESS y salario neto|el salario debe de ser mayor a cero |
+|nombre del empleado y salario|Validar que el salario no sean negativas (si lo son, se vuelven a pedir)  calcular deducciones comprobar los limites|salario bruto,descuento,IESS y salario neto|el salario debe de ser mayor a cero se trabajan con numeros enteros positivos  |
 |  |  |  |  |
 
 **Ejecución con los datos del ejemplo:**
 
-![Ejecución](captura_p.png)
+![Ejecución](/AU-2/AC-2/Captura%20de%20pantalla%20ejercicico1.png)
 
 ## Problema 2 · Calificaciones (AC2_P2_Calificaciones.c)
 
 | Datos de entrada | Proceso | Datos de salida | Limitaciones |
-|---|---|---|---|
+|nombre de estudiante,3 calificaciones|Validar que cada calificación esté dentro del rango de 0 a 100,sumar 3 notas y sacar el promedio,buscar la calificacion mas alta|nombre ,calificaciones,nota mas alta ,promedio y condicion|se califica 1 estudiante y las calificaciones son numero enteros positivos|
 |  |  |  |  |
 
 **Ejecución con los datos del ejemplo:**
 
-![Ejecución](captura_p.png)
+![Ejecución](/AU-2/AC-2/Captura%20ejercicio2.png)
 
 ## Problema 3 · Compras (AC2_P3_Compras.c)
 

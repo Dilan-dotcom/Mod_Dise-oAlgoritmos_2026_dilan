@@ -48,7 +48,7 @@ do {
     salarioNeto=salarioBruto-(desCaja+descIess+descRenta);
     
     //salida de datos
-    printf("------- Comprobante de pago -------\n");
+    printf("====Comprobante de pago====\n");
     printf("Empleado: %s\n", nombre);
     printf("Salario bruto: %.2f\n", salarioBruto);
     printf("Descuento CAJA (9.5%%): %.2f\n", desCaja);
