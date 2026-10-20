@@ -2,18 +2,44 @@
 //se requiere obtenerlas ventas de cada semana,el total ya calculado con sus arreglos 
 #include <stdio.h>   
 #include<string.h>     
-
+//constantes
 #define  TASACAJA 0.095  
 #define TASAIESS 0.025
 #define TASARENTA 0.10     
 #define  LIMITERENTA 800
 int main (void){
-    char nombre[100];         
-    double salario_bruto;     // Guarda el salario bruto ingresado
-    double desc_caja;         // Monto calculado de la CAJA
-    double desc_iess;         // Monto calculado del IESS
-    double desc_renta = 0.0;  // Monto del impuesto sobre la renta
+    char nombre[30];         
+    double salarioBruto;   
+    double desCaja;         
+    double descIess;         
+    double desc_renta = 0.0;  
     double salario_neto;
+//validacion nombrre
+do
+{
+    printf("Nombre completo : ");
+    fgets(nombre,sizeof(nombre),stdin);
+    nombre[strcspn(nombre,"\n")]='\0';
+    if (strlen(nombre)==0)
+    {
+        printf("Nombre invalido no se puede poner un nombre vacio : \n");
+    }
+    
+} while (strlen(nombre==0));
+//calculos
+do {
+        printf("Salario bruto: ");
+        scanf("%lf", &salarioBruto);
 
+        if (salarioBruto <= 0) {
+            printf("Error: El salario bruto debe ser mayor a 0. Intente de nuevo.\n");
+        }
+    } while (salarioBruto <= 0);
 
-}
+    
+    desCaja = salarioBruto * TASACAJA;
+    desCaja = salarioBruto * TASAIESS;
+
+    if (salarioBruto > LIMITERENTA) {
+        desc_renta = salarioBruto* TASARENTA;
+    }
