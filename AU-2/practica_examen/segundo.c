@@ -4,7 +4,7 @@
 int main(void) {
     // Declaración de variables y arreglos
     char nombre[50];               // Almacena el nombre completo del colaborador
-    char criterios[3][30] = {"puntualidad", "calidad", "trabajo en equipo"     };                                                     // Arreglo de cadenas con los nombres de los tres criterios
+    char criterios[3][30] = {"puntualidad", "calidad", "trabajo en equipo"  };  // Arreglo de cadenas con los nombres de los tres criterios
     float puntajes[3];             // Arreglo para almacenar el puntaje de cada criterio use float con menos espacios
     float suma = 0;                // Acumulador para sumar los tres puntajes
     float promedio = 0;            // Almacena el promedio de los puntajes
@@ -14,7 +14,7 @@ int main(void) {
     
     // Solicitar el nombre del colaborador (permite espacios)
     printf("Nombre del colaborador: ");
-    scanf(" %[^\n]", nombre);
+    scanf("%[^\n]", nombre);//nota esta linea significa que lee un conjunto de caracteres avanzados 
 
     // Ciclo para pedir y validar el puntaje de cada criterio
     for (int i = 0; i < 3; i++) {
