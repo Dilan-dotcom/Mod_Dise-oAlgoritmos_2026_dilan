@@ -39,7 +39,7 @@ int main(void) {
         printf("Nombre invalido no se puede poner un nombre vacio : \n");
     }
     } while (strlen(nombre)==0);
-// 2. Lectura y validación de las 3 calificaciones en un arreglo con for + do...while
+//   validación de las 3 calificaciones en un arreglo con for + do...while
     for (i = 0; i < 3; i++) {
         do {
             printf("Calificacion %d (0 a 100): ", i + 1);

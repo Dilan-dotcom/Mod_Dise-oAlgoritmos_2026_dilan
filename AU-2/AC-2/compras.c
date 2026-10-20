@@ -20,28 +20,58 @@ y el total a pagar.*/
 #define ANCHNOMBRE 50         // Máximo de productos permitidos 
 #define TASAIMPUESTO 0.13  //impuesto
 
+//! CONSTANTES
+#define MAX_PRODUCTOS 10
+#define ANCHO_NOMBRE 50
+
+
 int main(void){
-    char cliente[50];             
-    char productos[MAXPROD][ANCHNOMBRE];     // Arreglo paralelo para los nombres de los productos
-    double precios[MAXPROD];       // Arreglo paralelo para los precios unitarios
-    int cantidades[MAXPROD];       // Arreglo paralelo para las cantidades compradas
+    //! VARIABLES
+    char nombre[50], productos[MAX_PRODUCTOS][ANCHO_NOMBRE];
+    double precios[MAX_PRODUCTOS], subtotalProdu, subtotal, totalDescuentos,impuesto, totalPagar;
+    int cantidades[MAX_PRODUCTOS], i=0, totalProductos=0;
+    char respuesta;
+
+    printf("Ingrese su nombre: \n");
+    fgets(nombre, sizeof(nombre), stdin);
+    nombre[strcspn(nombre, "\n")] = '\0';
+
+    do
+    {
+        printf("Ingrese el nombre del producto: \n");
+        fgets(productos[i], sizeof(productos[i]), stdin);
+        productos[i][strcspn(nombre, "\n")] = '\0';
+
+        do
+        {
+            printf("Ingrese el precio del producto: \n");
+            scanf("%lf", &precios[i]);
+
+            if (precios[i] < 0)
+            {
+                printf("Precio incorrecto: \n");
+            }
+            
+
+        } while (precios[i] < 0);
+
+        do
+        {
+            printf("Ingrese la cantidad: \n");
+            scanf("%d", &cantidades[i]);
+
+            if (cantidades[i] < 0)
+            {
+                printf("Dato incorrecto: \n");
+            }
+            
+
+        } while (cantidades[i] < 0);
+        printf("El subtotal producto es %.2f",subtotalProdu)
+
+    } while (condition);
     
-    int totalProductos = 0;        
-    double subtotalGeneral = 0;  // Acumulador de la suma de los subtotales
-    char opcion;                    
-    
-    double descuento = 0;       
-    int porceDesc = 0;       
-    double totalDesc = 0;    
-    double impuesto = 0;         
-    double totalPagar = 0;
-    //entrada de datos
-    // Lectura del nombre del cliente
-    printf("Nombre :");
-    if (fgets(cliente, sizeof(cliente), stdin) != NULL) {
-        size_t len = strlen(cliente);
-        if (len > 0 && cliente[len - 1] == '\n') {
-            cliente[len - 1] = '\0';
-        }
-    }       
+
+
+    return 0;
 }
