@@ -20,15 +20,15 @@ y el total a pagar.*/
 #define ANCHNOMBRE 50         // Máximo de productos permitidos 
 #define TASAIMPUESTO 0.13  //impuesto
 
-//! CONSTANTES
+// CONSTANTES
 #define MAX_PRODUCTOS 10
 #define ANCHO_NOMBRE 50
 
 
 int main(void){
-    //! VARIABLES
+    // VARIABLES
     char nombre[50], productos[MAX_PRODUCTOS][ANCHO_NOMBRE];
-    double precios[MAX_PRODUCTOS], subtotalProdu, subtotal, totalDescuentos,impuesto, totalPagar;
+    double precios[MAX_PRODUCTOS], subtotalProduct, subtotal, totalDescuentos,impuesto, totalPagar;
     int cantidades[MAX_PRODUCTOS], i=0, totalProductos=0;
     char respuesta;
 
@@ -67,11 +67,41 @@ int main(void){
             
 
         } while (cantidades[i] < 0);
-        printf("El subtotal producto es %.2f",subtotalProdu)
+        subtotalProduct=precios[i]*cantidades[i];
+        printf("El subtotal producto es %.2f",subtotalProduct);
 
-    } while (condition);
+        subtotal+=subtotal+subtotalProduct;
+
+        totalProductos++;
+        i++;
+        //salto de linea 
+        while (getchar()!='\n')
+        {
+            /* code */
+        }
+        
+        //mas productos?
+        if (totalProductos <MAX_PRODUCTOS)
+        {
+            printf("desea seguir agregando productos ?(s/n)");
+            scanf("%c",respuesta);
+            if (respuesta!='s'&&respuesta!='S')
+            {
+                printf("Formato no valido");
+            
+        } while (respuesta!='S' && respuesta != 'N'&&respuesta!='n')
+
+            
+        }
+        
+
+    } while ((respuesta!='s'|| respuesta!='S')&&totalProductos< MAX_PRODUCTOS);
     
-
+    printf("===Desglose===");
+    printf("");
+    printf("");
+    printf("");
+    printf("");
 
     return 0;
 }

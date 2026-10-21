@@ -27,12 +27,12 @@
 ## Problema 3 · Compras (AC2_P3_Compras.c)
 
 | Datos de entrada | Proceso | Datos de salida | Limitaciones |
-| |---|---|---|
+|nombre , productos  y precios |registrar todos los productos y precion , opcion para continuar , sacar los totales y los calculos de desc y impuetos|total final ,desglose de datos ,ciuanto se compro |no poner bien los nombres , precios que sean enteros | 
 |  |  |  |  |
 
 **Ejecución con los datos del ejemplo:**
 
-![Ejecución](captura_p.png)
+![Ejecución](/AU-2/AC-2/Captura%20de%20pantalla%20ejercicio%203.png)
 
 ## Conclusión
 
