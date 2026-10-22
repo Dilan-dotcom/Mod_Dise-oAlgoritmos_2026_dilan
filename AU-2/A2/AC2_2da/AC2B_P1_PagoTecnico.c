@@ -56,7 +56,7 @@ do
         
         }
         
-        
+
     } while (tarifa <= 0);
 
 //parte logica-3 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
@@ -66,18 +66,13 @@ do {
         printf("ingrese las horas trabajadas en la semana   : ");
         scanf("%d", &horas);
     //definicion de horas y extras 
-        if (horas <= 0) {
+        if (horas <= 0 || horas>MAXIMOHORAS) {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
             
         }
-        else if (horas>MAXIMOHORAS)
-        {
-            printf("Error: Favor ingresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
-            printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
-            scanf("%d", &horas);
-        while (horas <= 0 || horas>MAXIMOHORAS );
+        while (horas <= 0 || horas>MAXIMOHORAS)
         
-        }
+        
         if (horas > JORNADA  )//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
             
