@@ -53,10 +53,17 @@ do
 
         if (tarifa <= 0) {//indica que no puede ser cero
             printf("Error: La tarifa debe ser mayor a 0. Intente de nuevo.\n");
+        
         }
+        else if (tarifa>MAXIMOHORAS)
+        {
+        printf("Error: no se pueden laburar mas e 60 horas.\n");
+        }
+        
     } while (tarifa <= 0);
 
 //parte logica-3 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
+
 do {
         printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
         scanf("%d", &horas);
@@ -64,22 +71,20 @@ do {
         if (horas <= 0) {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
         }
-
         
-        else if (horas > MAXIMOHORAS)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
+        
+        else if (horas >JORNADA)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
                 
             extra = (horas * tarifa) * TASARECARGO;//valor de horas por tarifas por el recargo
             
         }
-        else if ( horas > MAXIMOHORAS )
+        else if ( horas < JORNADA )
         {
             extra = 0;
         }
         
     } while (horas <= 0);
-
-        
 
     //parte logica : lo que entendi del ejercicio de la parte de horas ordinarioas es que lo que este por debajo de 48 son ordinarias y lo que este por encima son un agregado como comision o extra
     extra2 = extra;//verificacion de variable en caso de error
@@ -102,11 +107,11 @@ do {
     printf("Seguro social  %.2f\n:",seguro);
     printf("Recibe un salario neto de  :%.2f\n",salarioNeto);
     // esta parte verifica si hubrieron horas extras o no y se lo hace saber
-if (horas>JORNADA)
+if (horas>MAXIMOHORAS)
         {
             printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
         }
-        else if (horas=JORNADA)
+        else if (horas==JORNADA)
         {
             printf("se cumplio la jornada ordinaria no hay extras");
         }
