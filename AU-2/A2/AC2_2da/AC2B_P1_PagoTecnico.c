@@ -16,7 +16,7 @@ el bruto, el seguro y el neto, con dos decimales y alineados.
 //constantes
 #define  JORNADA 48 //maximo de jornada
 #define MAXIMOHORAS 60 //horas maximas 
-#define TASARECARGO 1.5   ///valor de la tasa de recargo
+#define TASARECARGO 1.50   ///valor de la tasa de recargo
 #define  TASASEGURO 0.010 //tasa del seguro
 //variables
 int main (void){
@@ -64,7 +64,7 @@ do {
         else if (horas > MAXIMOHORAS)
         {
                 
-            extra = (horas * tarifa) * 15;
+            extra = (horas * tarifa) * TASARECARGO;
             
         }
         else if ( horas > MAXIMOHORAS )
@@ -78,15 +78,17 @@ do {
     //parte de calculo y variables
     //salario bruto
     salarioBruto = (horas * tarifa) + extra;
-    //tasa del seguro
+    //Calculo del seguro
     seguro = salarioBruto * TASASEGURO;
-
+    //calculo salario neto
+    salarioNeto = salarioBruto - seguro;
     ///salida de datos desglose final 
-    printf("===PAGO SEMANAL DEL TECNICO===");
+    printf("===PAGO SEMANAL DEL TECNICO===\n");
     printf("El tecnico %s\n", nombre);
     printf("Con la tarifa de %.2f\n", salarioBruto);
+    printf("Con un extra de (si es cero no tuvo) %.2f\n", extra);
     printf("Horas ordinarias %d\n", horas);
-    printf("Recibe un salario bruto de : ");
-    printf("Seguro social");
-    printf("Recibe un salario neto de :");
+    printf("Recibe un salario bruto de %.2f\n :",salarioBruto);
+    printf("Seguro social  %.2f\n",seguro);
+    printf("Recibe un salario neto de  %.2f\n:",salarioNeto);
 }
