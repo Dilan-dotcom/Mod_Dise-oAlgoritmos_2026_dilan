@@ -55,10 +55,6 @@ do
             printf("Error: La tarifa debe ser mayor a 0. Intente de nuevo.\n");
         
         }
-        else if (tarifa>MAXIMOHORAS)
-        {
-        printf("Error: no se pueden laburar mas e 60 horas.\n");
-        }
         
     } while (tarifa <= 0);
 
@@ -68,10 +64,9 @@ do {
         printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
         scanf("%d", &horas);
     //definicion de horas y extras 
-        if (horas <= 0) {
-            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
+        if (horas <= 0 || horas>MAXIMOHORAS) {
+            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
         }
-        
         
         else if (horas >JORNADA)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
@@ -111,12 +106,12 @@ if (horas>MAXIMOHORAS)
         {
             printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
         }
-        else if (horas==JORNADA)
+        else if (horas==MAXIMOHORAS)
         {
             printf("se cumplio la jornada ordinaria no hay extras");
         }
         
-        else if (horas<JORNADA)
+        else if (horas<MAXIMOHORAS)
         {
             printf("se cumplio menos de la jornada");
         }
