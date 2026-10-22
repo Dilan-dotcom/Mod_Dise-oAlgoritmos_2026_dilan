@@ -23,7 +23,9 @@ int main (void){
     char nombre[30]; //variables nombre de empleado        
     double salarioBruto; //variable del salario sin editar 
     double salarioNeto;//variable con el resultado editado
-    double seguro;//variable para definir seguro
+    
+    double tasaRec;//variable tasa recarga
+    double seguro = 0; //tasa seguro
     double tarifa = 0;//varibale para definir la tarifa de trabajo
     double extra = 0;//variable para definir tarifa 
     int horas;//variable patra definir horas 
@@ -39,23 +41,8 @@ do
     }
     
 } while (strlen(nombre)==0);
-//parte logica-2 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
-do {
-        printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
-        scanf("%d", &horas);
 
-        if (horas <= 0) {
-            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
-        }
-        else if (horas > MAXIMOHORAS)
-        {
-            extra = (horas * tarifa) * 15;
-            
-        }
-        else extra = 0;
-            
-    } while (horas <= 0);
-    //parte logica-3 ingreso de la variable tarifa y validacion de la misma 
+ //parte logica-2 ingreso de la variable tarifa y validacion de la misma 
     do {
         printf("Ingrese la tarifa que se le indico: ");
         scanf("%lf", &tarifa);
@@ -64,8 +51,35 @@ do {
             printf("Error: La tarifa debe ser mayor a 0. Intente de nuevo.\n");
         }
     } while (tarifa <= 0);
+   
+
+//parte logica-3 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
+do {
+        printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
+        scanf("%d", &horas);
+    //definicion de horas y extras 
+        if (horas <= 0) {
+            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
+        }
+        else if (horas > MAXIMOHORAS)
+        {
+                
+            extra = (horas * tarifa) * 15;
+            
+        }
+        else if ( horas > MAXIMOHORAS )
+        {
+            extra = 0;
+        }
+        
+    } while (horas <= 0);
+
+    
     //parte de calculo y variables
+    //salario bruto
     salarioBruto = (horas * tarifa) + extra;
+    //tasa del seguro
+    seguro = salarioBruto * TASASEGURO;
 
     ///salida de datos desglose final 
     printf("===PAGO SEMANAL DEL TECNICO===");
