@@ -76,6 +76,7 @@ do {
         }
         
     } while (horas <= 0);
+    //parte logica : lo que entendi del ejercicio de la parte de horas ordinarioas es que lo que este por debajo de 48 son ordinarias y lo que este por encima son un agregado como comision o extra
     extra2 = extra;//verificacion de variable en caso de error
 
     //parte de calculo y variables
