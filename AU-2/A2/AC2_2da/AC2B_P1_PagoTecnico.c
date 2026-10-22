@@ -8,7 +8,11 @@ pagan al 150 % de la tarifa.
 salario neto.
 5. Muestre un comprobante con el nombre, las horas y el pago ordinario, las horas y el pago extra, 
 el bruto, el seguro y el neto, con dos decimales y alineados.
-*/ 
+*/
+
+
+
+// en resumen se requiere dar un salario completo despues de deducciones y extras si es que lo hay ycon los datos de el trabajador , el nombre ,tarisfa y cuanto trabajo ,luego sacar las deducciones del seguro , extra(si las hay) salario bruto y neto todo tratando de que este todo dentro de los limites como por ejemplo no dejar numero en cero o menos o nombres vacios 
 
 #include <stdio.h> //librerias  
 #include<string.h>     
