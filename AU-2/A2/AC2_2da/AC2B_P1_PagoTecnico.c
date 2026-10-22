@@ -56,19 +56,27 @@ do
         
         }
         
+        
     } while (tarifa <= 0);
 
 //parte logica-3 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
+
 
 do {
         printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
         scanf("%d", &horas);
     //definicion de horas y extras 
-        if (horas <= 0 || horas>MAXIMOHORAS) {
+        if (horas <= 0) {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
+            
         }
+        else if (horas>MAXIMOHORAS)
+        {
+            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
+        while (horas <= 0 || horas>MAXIMOHORAS );
         
-        else if (horas >JORNADA)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
+        }
+        if (horas > JORNADA  )//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
                 
             extra = (horas * tarifa) * TASARECARGO;//valor de horas por tarifas por el recargo
@@ -102,18 +110,18 @@ do {
     printf("Seguro social  %.2f\n:",seguro);
     printf("Recibe un salario neto de  :%.2f\n",salarioNeto);
     // esta parte verifica si hubrieron horas extras o no y se lo hace saber
-if (horas>MAXIMOHORAS)
+if (horas>JORNADA)
         {
             printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
         }
-        else if (horas==MAXIMOHORAS)
+        else if (horas==JORNADA)
         {
             printf("se cumplio la jornada ordinaria no hay extras");
         }
         
-        else if (horas<MAXIMOHORAS)
+        else if (horas<JORNADA)
         {
-            printf("se cumplio menos de la jornada");
+            printf("se cumplio menos de la jornada ordinaria");
         }
         return 0;
 }
