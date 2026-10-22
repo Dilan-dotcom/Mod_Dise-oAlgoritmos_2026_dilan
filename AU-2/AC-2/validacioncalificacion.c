@@ -25,7 +25,7 @@ int main(void) {
     float sumaNotas = 0;   
     float promedio = 0;    
     float notAlta = 0;    
-    char condicion[10];       
+    char condicion[15];       
     int i;
     //entrada de datos
     printf("=== Calificaciones del estudiante ===\n");
