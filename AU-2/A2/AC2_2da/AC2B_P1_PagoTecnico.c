@@ -10,7 +10,7 @@ salario neto.
 el bruto, el seguro y el neto, con dos decimales y alineados.
 */ 
 
-#include <stdio.h>   
+#include <stdio.h> //librerias  
 #include<string.h>     
 //constantes
 #define  JORNADA 48 //maximo de jornada
@@ -37,7 +37,7 @@ do
     nombre[strcspn(nombre,"\n")]='\0';
     if (strlen(nombre)==0)
     {
-        printf("Nombre invalido no se puede poner un nombre vacio : \n");
+        printf("Nombre invalido no se puede poner un nombre vacio : \n");//lo ddevuelve 
     }
     
 } while (strlen(nombre)==0);
@@ -51,7 +51,6 @@ do
             printf("Error: La tarifa debe ser mayor a 0. Intente de nuevo.\n");
         }
     } while (tarifa <= 0);
-   
 
 //parte logica-3 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
 do {
@@ -64,7 +63,7 @@ do {
         else if (horas > MAXIMOHORAS)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
                 
-            extra = (horas * tarifa) * TASARECARGO;
+            extra = (horas * tarifa) * TASARECARGO;//valor de horas por tarifas por el recargo
             
         }
         else if ( horas > MAXIMOHORAS )
@@ -82,14 +81,14 @@ do {
     seguro = salarioBruto * TASASEGURO;
     //calculo salario neto
     salarioNeto = salarioBruto - seguro;
-    ///salida de datos desglose final 
+    ///salida de datos desglose final con los datos de nombre ,tarifa , extra , horas , salario, tanto bruto como neto y seguro  
 
     printf("===PAGO SEMANAL DEL TECNICO===\n");
     printf("El tecnico %s\n", nombre);
     printf("Con la tarifa de %.2f\n",tarifa);
     printf("Con un extra de (si es cero no tuvo) %.2f\n", extra2);
-    printf("Horas ordinarias %d\n", horas);
-    printf("Recibe un salario bruto de %.2f\n :",salarioBruto);
-    printf("Seguro social  %.2f\n",seguro);
+    printf("Horas ordinarias %d\n:", horas);
+    printf("Recibe un salario bruto de %.2f\n:",salarioBruto);
+    printf("Seguro social  %.2f\n:",seguro);
     printf("Recibe un salario neto de  :%.2f\n",salarioNeto);
 }

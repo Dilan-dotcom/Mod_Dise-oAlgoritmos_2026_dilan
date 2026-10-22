@@ -93,7 +93,7 @@ UA2/AC2_2da/
 
 ### Ejecución con los datos del ejemplo
 
-![Ejecución del problema 3](recursos/captura_p3.png)
+![Ejecución del problema 3](recursos/Captura%20de%20pantalla%20prueba.png)
 
 ---
 
