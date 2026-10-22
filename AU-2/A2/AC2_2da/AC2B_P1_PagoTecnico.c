@@ -86,7 +86,7 @@ do {
 
     printf("===PAGO SEMANAL DEL TECNICO===\n");
     printf("El tecnico %s\n", nombre);
-    printf("Con la tarifa de %.2f\n", salarioBruto);
+    printf("Con la tarifa de %.2f\n",tarifa);
     printf("Con un extra de (si es cero no tuvo) %.2f\n", extra2);
     printf("Horas ordinarias %d\n", horas);
     printf("Recibe un salario bruto de %.2f\n :",salarioBruto);

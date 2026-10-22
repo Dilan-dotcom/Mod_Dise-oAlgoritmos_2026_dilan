@@ -49,7 +49,7 @@ UA2/AC2_2da/
 
 ### Ejecución con los datos del ejemplo
 
-![Ejecución del problema 1](recursos/captura_p1.png)
+![Ejecución del problema 1](recursos/Captura%20de%20pantalla%20reposicion.png)
 
 ---
 
