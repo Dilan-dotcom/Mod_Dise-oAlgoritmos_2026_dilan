@@ -63,7 +63,7 @@ do
 
 
 do {
-        printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
+        printf("ingrese las horas trabajadas en la semana   : ");
         scanf("%d", &horas);
     //definicion de horas y extras 
         if (horas <= 0) {
@@ -72,13 +72,15 @@ do {
         }
         else if (horas>MAXIMOHORAS)
         {
-            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
+            printf("Error: Favor ingresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
+            printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
+            scanf("%d", &horas);
         while (horas <= 0 || horas>MAXIMOHORAS );
         
         }
         if (horas > JORNADA  )//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
-                
+            
             extra = (horas * tarifa) * TASARECARGO;//valor de horas por tarifas por el recargo
             
         }
