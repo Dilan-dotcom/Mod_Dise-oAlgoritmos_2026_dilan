@@ -64,6 +64,7 @@ do {
         if (horas <= 0) {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
         }
+        
         else if (horas > MAXIMOHORAS)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
                 
@@ -76,6 +77,22 @@ do {
         }
         
     } while (horas <= 0);
+
+if (horas>JORNADA)
+        {
+            printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
+        }
+        else if (horas=JORNADA)
+        {
+            printf("se cumplio la jornada ordinaria no hay extras");
+        }
+        
+        else if (horas<JORNADA)
+        {
+            printf("se cumplio menos de la jornada");
+        }
+        
+
     //parte logica : lo que entendi del ejercicio de la parte de horas ordinarioas es que lo que este por debajo de 48 son ordinarias y lo que este por encima son un agregado como comision o extra
     extra2 = extra;//verificacion de variable en caso de error
 
