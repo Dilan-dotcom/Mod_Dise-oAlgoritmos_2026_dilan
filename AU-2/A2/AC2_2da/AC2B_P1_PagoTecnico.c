@@ -64,6 +64,7 @@ do {
         if (horas <= 0) {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
         }
+
         
         else if (horas > MAXIMOHORAS)//esta parte habla de que si las horas se pasan el extra vale algo si no ,no
         {
