@@ -20,11 +20,59 @@ el bruto, el seguro y el neto, con dos decimales y alineados.
 #define  TASASEGURO 0.010 //tasa del seguro
 //variables
 int main (void){
-    char nombre[30];         
-    double salarioBruto;   
-           
-        
-     
-    double salarioNeto;
-    int horas;
+    char nombre[30]; //variables nombre de empleado        
+    double salarioBruto; //variable del salario sin editar 
+    double salarioNeto;//variable con el resultado editado
+    double seguro;//variable para definir seguro
+    double tarifa = 0;//varibale para definir la tarifa de trabajo
+    double extra = 0;//variable para definir tarifa 
+    int horas;//variable patra definir horas 
+//primera entrada ,parte logica-1de datos solicitud del nombre y validacion del mismo
+do
+{
+    printf("Nombre completo del tecnico: ");
+    fgets(nombre,sizeof(nombre),stdin);
+    nombre[strcspn(nombre,"\n")]='\0';
+    if (strlen(nombre)==0)
+    {
+        printf("Nombre invalido no se puede poner un nombre vacio : \n");
+    }
+    
+} while (strlen(nombre)==0);
+//parte logica-2 solicitud de horas trabajafdas del tecnico y verificacion de las mismas
+do {
+        printf("ingrese las horas trabajadas en la semana (de 1 a 60)  : ");
+        scanf("%d", &horas);
+
+        if (horas <= 0) {
+            printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo.\n");
+        }
+        else if (horas > MAXIMOHORAS)
+        {
+            extra = (horas * tarifa) * 15;
+            
+        }
+        else extra = 0;
+            
+    } while (horas <= 0);
+    //parte logica-3 ingreso de la variable tarifa y validacion de la misma 
+    do {
+        printf("Ingrese la tarifa que se le indico: ");
+        scanf("%lf", &tarifa);
+
+        if (tarifa <= 0) {
+            printf("Error: La tarifa debe ser mayor a 0. Intente de nuevo.\n");
+        }
+    } while (tarifa <= 0);
+    //parte de calculo y variables
+    salarioBruto = (horas * tarifa) + extra;
+
+    ///salida de datos desglose final 
+    printf("===PAGO SEMANAL DEL TECNICO===");
+    printf("El tecnico %s\n", nombre);
+    printf("Con la tarifa de %.2f\n", salarioBruto);
+    printf("Horas ordinarias %d\n", horas);
+    printf("Recibe un salario bruto de : ");
+    printf("Seguro social");
+    printf("Recibe un salario neto de :");
 }
