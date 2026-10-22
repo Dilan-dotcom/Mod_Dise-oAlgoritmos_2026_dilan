@@ -79,19 +79,6 @@ do {
         
     } while (horas <= 0);
 
-if (horas>JORNADA)
-        {
-            printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
-        }
-        else if (horas=JORNADA)
-        {
-            printf("se cumplio la jornada ordinaria no hay extras");
-        }
-        
-        else if (horas<JORNADA)
-        {
-            printf("se cumplio menos de la jornada");
-        }
         
 
     //parte logica : lo que entendi del ejercicio de la parte de horas ordinarioas es que lo que este por debajo de 48 son ordinarias y lo que este por encima son un agregado como comision o extra
@@ -114,4 +101,19 @@ if (horas>JORNADA)
     printf("Recibe un salario bruto de %.2f\n:",salarioBruto);
     printf("Seguro social  %.2f\n:",seguro);
     printf("Recibe un salario neto de  :%.2f\n",salarioNeto);
+    // esta parte verifica si hubrieron horas extras o no y se lo hace saber
+if (horas>JORNADA)
+        {
+            printf("se hizo un excedente de horas ordinarias(48 horas) tendras extras");
+        }
+        else if (horas=JORNADA)
+        {
+            printf("se cumplio la jornada ordinaria no hay extras");
+        }
+        
+        else if (horas<JORNADA)
+        {
+            printf("se cumplio menos de la jornada");
+        }
+        return 0;
 }
