@@ -73,4 +73,5 @@ for (d = 0; d < MAXDIAS; d++){//ciclo for para guardar las temperaturas por dia
   
     }
     printf ("(%d dias)",cantDias);
+    return 0;
 }
