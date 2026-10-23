@@ -143,7 +143,7 @@ int main(void){
     for (e = 0; e < EST; e++){
         //compara las dos cadenas
         //strcmp devuelve 0 si son iguales letra por letra
-        if (strcmp(buscado, nombres[e][0]) == 0){
+        if (strcmp(buscado, nombres[e]) == 0){
             encontrado = e;
         }
     }
