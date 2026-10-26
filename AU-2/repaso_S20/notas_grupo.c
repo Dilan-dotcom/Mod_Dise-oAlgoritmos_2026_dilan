@@ -18,7 +18,7 @@ int main(void) {
     // Variables para la busqueda final del estudiante
     char buscar[30];
     int encontrado = 0;
-    char condicion[15];
+    char condicion[20];
     float evaluaProm;
 
     //  Pedir nombres y notas con validacion ---
@@ -90,7 +90,7 @@ int main(void) {
             }
             
             // Mostramos el resultado del estudiante encontrado
-            printf("Resultado -> %s: Promedio %.2f - %s\n", nombres[f], prom[f], condicion);
+            printf("Resultado  %s: Promedio %.2f - %s\n", nombres[f], prom[f], condicion);
             break; // Rompemos el ciclo porque ya lo encontramos
         }
     }
