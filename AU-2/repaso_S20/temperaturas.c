@@ -11,7 +11,7 @@
 
 int main(void){
 //variables 
-int dias;
+
 char Dias[MAXDIAS][6] = {"Lun", "Mar", "Mie", "Jue"," VIer","Sab","Dom"};//maximo de 7 dias con capacidad de 5 espacios
 double temperaturas[MAXDIAS];
 int masCalor=0;
@@ -24,7 +24,7 @@ for (d = 0; d < MAXDIAS; d++){//ciclo for para guardar las temperaturas por dia
         
     do
     {
-        printf("Ingrese la temperatura de dia(0 a 45) %s:", Dias );
+        printf("Ingrese la temperatura de dia(0 a 45) %s:", Dias[MAXDIAS] );
         scanf("%lf", &temperaturas[d]); 
 
         if (temperaturas[d]<MINTEMP||temperaturas[d]>MAXITEMP)
@@ -54,7 +54,7 @@ for (d = 0; d < MAXDIAS; d++){//ciclo for para guardar las temperaturas por dia
     Prom=Prom/7;//se deja afuera del for porque el valor de esta operacion entra en un conflicto raro con el prom del for 
     for (d = 0; d < MAXDIAS; d++)
     {
-        if( temperaturas[d] > Prom) //parte calcula si temp d es mayor al promedio la cantidad de dias se suma 
+        if( temperaturas[d] > Prom){ //parte calcula si temp d es mayor al promedio la cantidad de dias se suma 
             cantDias++;
             sobreProm[d]=d;
     }
@@ -64,12 +64,18 @@ for (d = 0; d < MAXDIAS; d++){//ciclo for para guardar las temperaturas por dia
         printf("=====Reporte semanal=====");
     printf("Temperatura del dia %s es:%.1f C\n",Dias[d],temperaturas[d]);
     }
+}
     printf("Promedio %.2f C\n",Prom);
     printf("Dia mas caluroso :%s (%.f)C\n",Dias[masCalor],temperaturas[masCalor]);
-    printf("Sobre promedio :\n");
+    for ( d = 0; d < MAXDIAS; d++)
+    {
+    printf("El sobre prom es %d\n",sobreProm[d]);
+    }
+    
+    
     for (d = 0; d < MAXDIAS; d++)
     {
-        printf("%s",dias[sobreProm]);
+        printf("%d",cantDias);
   
     }
     printf ("(%d dias)",cantDias);
