@@ -58,7 +58,7 @@ int main(void) {
     }
 
     // Mostramos al mejor estudiante
-    printf("\nMejor estudiante: %s con %.2f de promedio\n\n", nombres[posMejor], mejorProm);
+    printf("Mejor estudiante: %s con %.2f de promedio\n", nombres[posMejor], mejorProm);
 
     //  Calcular el promedio de cada evaluacion (por columnas) ---
     for (int j = 0; j < 3; j++) {
