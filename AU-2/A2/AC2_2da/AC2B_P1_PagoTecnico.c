@@ -70,7 +70,7 @@ do {
             printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");
             
         }
-        while (horas <= 0 || horas>MAXIMOHORAS)
+        while (horas <= 0 || horas>MAXIMOHORAS){printf("Error: Favor ingtresar las horas solicitadas. Intente de nuevo(no se pueden mas de 80).\n");}
         
         
         if (horas > JORNADA  )//esta parte habla de que si las horas se pasan el extra vale algo si no ,no

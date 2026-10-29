@@ -5,7 +5,7 @@
 
 int main(void){
     double notas[N] ={80.5 , 90.0 ,75.0 ,60.5 , 95.0};//esto es el valor de cada una des las 5 notas que estan dentro de N recuerde el ejemplo del casillero N es el casillero grande y lo que esta adentro es la variable suma y sus datitos
-    double suma = 0.0;//acumulador (siempre es cero ,aunque depende de la situacion del ejercico)
+    double suma = 0;//acumulador (siempre es cero ,aunque depende de la situacion del ejercico)
     double mayor = notas[0];////asumes que la primera nota es la mayor(recuerda la que se encarga de saber que nota es la mayor es el ciclo for de mas adelante )
     //el if compara una nota con la anterior  hasta sacar la mayor 
     int i;//variable contadora para el ciclo for (puede ser i o cualquier palabra o numero eso no importa)
