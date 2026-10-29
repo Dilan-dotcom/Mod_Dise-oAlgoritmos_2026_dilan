@@ -71,9 +71,74 @@ for ( i = 0; i < n; i++)
     printf("Total vendido %12.2f\n:",totalVendido);
     //compra mayor
     printf("Compra mayor : %s (%.2f)\n",cliente[comproMas],total[comproMas]);
+    //cpmras con descuento
+    printf("Con descuento :  %d compra(s)\n",aplicaDes);
     //total final 
-
+return 0;
 }
 
 
 }
+
+//defininciones .leer entero
+
+int leerEntero(const char mensaje, int minimo, int maximo){
+//variable local para el dato
+int valor;
+
+do{
+    printf("%s(%d a %d) :",mensaje,minimo,maximo);
+    scanf("%d",&valor);
+} while (valor<minimo||valor > maximo);
+return valor;
+}
+//definicion precioEntero
+
+double precioEntrada(int tipo){
+    switch (tipo){
+    case 1:
+        return GENERAL;
+    case 2:
+        return NINO;
+    }
+}
+
+//definicion de calcular total
+
+double calcularTotal(int tipo,int cantidad){
+    double total = precioEntrada(tipo * cantidad);
+
+    if (cantidad>=MINDESCUENTO)
+    {
+        total = total * (1 - DESCUENTO);
+    }
+    return total;
+}
+//definir resumir
+void resumir (const int cant[], const double tot[],int n,double *total,int *comproMas,int*aplicaDes){
+    int i;
+
+    *total = 0;
+    *comproMas = 0;
+    aplicaDes = 0;
+    //recorrer las compras 
+    for ( i = 0; i < n; i++)
+    {
+        *total += tot[i];
+
+        //comparar
+        if (tot[i]>tot[*comproMas])
+        {
+            *comproMas = i;
+
+            if (cant[i]>=MINDESCUENTO)
+            {
+                (*aplicaDes)++;
+            }
+            
+        }
+        
+    }
+    
+}
+
