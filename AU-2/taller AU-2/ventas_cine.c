@@ -52,11 +52,11 @@ int main(void){
 
     //encabezado de al tabla
 
-    printf("\n%-12s%9d%12.2f\n", clientes[i], cantidades[i], totales[i]);
+    printf("\n%-12s%9s%12s\n", "cliente", "entradas", "totales");
     //recorrer las compras
     for (i = 0; i < n; i++) {
         //mostrar fila
-        printf("%-12s%9d%12.2f\n", clientes[i], cantidades[i], totales[i]);
+        printf("%-12s%9i%12.2f\n", clientes[i], cantidades[i], totales[i]);
         //total vendido
         printf("Total vendido: %12.2f\n", totalVendido);
         //compra mayor
