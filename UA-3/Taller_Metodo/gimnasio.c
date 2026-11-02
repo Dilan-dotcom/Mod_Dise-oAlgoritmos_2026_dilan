@@ -22,7 +22,7 @@ int main(void){
     double totales[MAX_COMPRAS];
 
     int n, i = 0, tipo;
-
+    
     double totalDia;
     int posMayor, conDescuento = 0;
 
@@ -58,7 +58,7 @@ printf("\n%-12s%9s%12s\n","Clientes","Edad","Subtotal");
 for (i = 0; i < n; i++)
 {
 
-    printf("%-12s%9d%12.2f\n", clientes[i],edad[i], totales[i]);
+    printf("%-12s%9d%12.2f\n", clientes[i], edad[i] , totales[i]);
 }
 
     printf("Total del dia: %12.2f\n", totalDia);
@@ -117,7 +117,7 @@ double calcularTotal(int tipo, int edad){
 //definir resumir
 void resumir(const int cant[], const double tot[],int n, double *total, int *posMayor, int *conDescuento){
     int i;
-
+    
     *total = 0;
     *posMayor = 0;
 
