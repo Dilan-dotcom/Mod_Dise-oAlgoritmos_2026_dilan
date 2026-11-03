@@ -1,6 +1,7 @@
 #include <stdio.h>
 void duplicar(int x) {
     x = x * 2;
+    printf("dentro: x = %d\n", x);
 }
 int main(void) {
     int n = 8;

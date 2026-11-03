@@ -1,6 +1,7 @@
 #include <stdio.h>
 void contar(int *total) {
-    *total++;
+    (*total)++;
+    
 }
 int main(void) {
     int t = 0;
