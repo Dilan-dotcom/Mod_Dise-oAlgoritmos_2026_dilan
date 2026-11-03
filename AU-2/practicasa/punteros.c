@@ -1,3 +1,5 @@
+ #include <stdio.h>
+
 /*El símbolo & (Se lee: "La dirección de..."):Sirve para averiguar dónde vive una variable en la memoria de la computadora.   Ejemplo: &edad significa "dame la dirección exacta de memoria donde está guardada la variable edad".   
 
 
@@ -9,13 +11,19 @@ El símbolo * cuando ya estás usándolo (Se lee: "El valor que hay en esa direc
 int main(void) {
 
     int edad=20; //caja edad que guarda  el numero 20 adentro
-    int *p =&edad;//Creamos el puntero 'p' y le guardamos la DIRECCIÓN (&) de 'edad'
+    int *p = &edad; // Creamos el puntero 'p' y le guardamos la DIRECCIÓN (&) de 'edad'
 
     printf("edad = %d\n", edad); // Imprime: edad = 20 (solo verificamos el dato esto no es necesario)
 
     //  Usamos el '*' para meternos a la casa a través de la dirección y cambiar el valor original
     *p = 21;              // ¡Esto cambia la variable 'edad' a 21 de verdad!
 
+    int x = 5; 
+    int *b = &x; 
+    *b = 9;  
+
+    
+    printf("x = %d\n", *b);
     printf("edad = %d\n", edad); // Ahora imprime: edad = 21
     return 0;
 }
