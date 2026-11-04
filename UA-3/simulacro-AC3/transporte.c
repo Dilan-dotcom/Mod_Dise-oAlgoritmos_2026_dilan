@@ -13,7 +13,7 @@ Codigo  Nombre  Viajes
 
 //Definir las constantes
 #define MAX_PASES 5     //espacios disponibles para pases
-#define TAM_NOMBRE 5    //19 caracteres o letras + el \0
+#define TAM_NOMBRE 20   //19 letras + el \0
 #define COD_MIN 100     //codigo minimo
 #define COD_MAX 999     //codigo maxmimo
 #define VIAJES_MAX 999  //vijes maxmimos
@@ -40,56 +40,58 @@ int main(void) {
     //Ciclo para el menu
     do {
         //mostar el menu
-        printf("\n=== Pases de bus ===");
-        printf("1. Incluir 2. Consultar 3. Registrar viaje 4. Dar de baja\n");
-        printf("5. Buscar 0. Salir\n");
-        
+        printf("\n=== Pases de bus ===\n");
+        printf("1. Incluir\n2. Consultar\n3. Registrar viaje\n4. Dar de baja\n5. Buscar\n0. Salir\n");
+
         //Leer la opcion
         opcion = leerEntero("Opcion", 0, 5);    //no aceptar opciones inexistentes
-        if (opcion >= 3) {
+
+        if (opcion >= 3 && opcion <= 5) {
             codigo = leerEntero("Codigo", COD_MIN, COD_MAX);
             pos = buscarCodigo(cod, activo, n, codigo); //busca el pase activo
             //revisa si existe
             if (pos == -1) {
-                //aviso
                 printf("No existe un pase activo con el codigo %d\n", codigo);
-                //para continuar
                 continue;
             }
         }
+
         switch (opcion) {
             case 1:
-            //revisa si no hay espacio
-            if (n == MAX_PASES) {
-                printf("No hay espacio para mas pases\n");
-                break;  //sale para volver al menu
-            
-                //lee codigo con entero
+                if (n == MAX_PASES) {
+                    printf("No hay espacio para mas pases\n");
+                    break;
+                }
+
                 codigo = leerEntero("Codigo", COD_MIN, COD_MAX);
-                //revisar si el codigo existe
-                if (buscarCodigo(cod, activo, n, codigo) != -1);
-                break;  //sale para no incluir al repetido
-            }
-            //pide nombre
-            printf("Nombre (una palabra): ");
-            //leer nombre
-            scanf("%19s", nombre);
-            //leer los viajes
-            cantidad = leerEntero("Viajes", 1, VIAJES_MAX); //DE 1 A 40 MAX
-            //guardar el pase que viene por direccion
-            incluir(cod, nom, viajes, activo, &n, codigo, nombre, cantidad);
-            //confirmar pase incluido
-            printf("Pase incluido (%d de %d)\n", n, MAX_PASES);
-            break;
+
+                int i;
+                for (i = 0; i < n; i++) {
+                    if (cod[i] == codigo) {
+                        printf("Ya existe un pase con el codigo %d\n", codigo);
+                        codigo = -1;
+                        break;
+                    }
+                }
+
+                if (codigo == -1) {
+                    break;
+                }
+
+                printf("Nombre (una palabra): ");
+                scanf(" %19s", nombre);
+                cantidad = leerEntero("Viajes", 1, VIAJES_MAX);
+                incluir(cod, nom, viajes, activo, &n, codigo, nombre, cantidad);
+                printf("Pase incluido (%d de %d)\n", n, MAX_PASES);
+                break;
 
             case 2:
                 consultar(cod, nom, viajes, activo, n);
                 break;
+
             case 3:
-                //intenta registrar viaje
                 if (usarViaje(&viajes[pos]))
-                printf("Viaje registrado. A %s le quedan %d\n", nom[pos], viajes[pos]);
-                //no quedan viajes
+                    printf("Viaje registrado. A %s le quedan %d\n", nom[pos], viajes[pos]);
                 else
                     printf("%s no tiene viajes disponibles\n", nom[pos]);
                 break;
@@ -100,17 +102,19 @@ int main(void) {
                 break;
 
             case 5:
-                //buscar un pase
                 printf("%d %s: %d viajes\n", cod[pos], nom[pos], viajes[pos]);
                 break;
 
-            default:
+            case 0:
                 printf("Hasta luego\n");
+                break;
+
+            default:
+                printf("Opcion invalida\n");
         }
 
     } while (opcion != 0);
     return 0;
-
 }
 
 //lectura valida de un entero
@@ -120,9 +124,17 @@ int leerEntero(const char mensaje[], int minimo, int maximo) {
     //ciclo validacion para que pida el dato al menos una vez
     do {
         printf("%s (%d a %d): ", mensaje, minimo, maximo);
-        //leer
-
-        scanf ("%d", &valor);
+        //leer y validar que el dato ingresado sea un entero
+        if (scanf("%d", &valor) != 1) {
+            while (getchar() != '\n') {
+                ;
+            }
+            valor = minimo - 1;
+        } else {
+            while (getchar() != '\n') {
+                ;
+            }
+        }
     } while (valor < minimo || valor > maximo);
     return valor;
 }
