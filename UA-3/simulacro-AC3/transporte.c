@@ -20,7 +20,7 @@ Codigo  Nombre  Viajes
 
 //Prototipos (una funcion por tarea)
 int leerEntero(const char mensaje[], int minimo, int maximo);
-int buscarCodigo(const int cod[], const int activo, int n, int codigo);
+int buscarCodigo(const int cod[], const int activo[], int n, int codigo);
 void incluir(int cod[], char nom[][TAM_NOMBRE], int viajes[], int activo[], int *n, int codigo, const char nombre[], int cantidad);
 void consultar(const int cod[], const char nom[][TAM_NOMBRE], const int viajes[], const int activo[], int n);
 int usarViaje(int *viajes);
@@ -187,7 +187,7 @@ int usarViaje(int*viajes){
 }
 
 //dar de baja
-void daDeBaja(int *activo){
+void darDeBaja(int *activo){
   //se marca como inactivo
   *activo = 0;
 }
