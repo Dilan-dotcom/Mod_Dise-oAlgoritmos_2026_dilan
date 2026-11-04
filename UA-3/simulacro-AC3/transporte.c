@@ -126,3 +126,68 @@ int leerEntero(const char mensaje[], int minimo, int maximo) {
     } while (valor < minimo || valor > maximo);
     return valor;
 }
+
+//Busqueda secuencial de un pase 
+int buscarCodigo(const int cod[], const int activo[], int n, int codigo){
+  int i;
+  for (i = 0; i < n; i++) {
+    //ignora pase datos de baja
+    if (cod[i] == codigo && activo[i] == 1) {
+      return i;
+    }
+  }
+  //no esta activo
+  return -1;
+}
+
+//Agrega espacio en el primer espacio libre 
+void incluir(int cod[], char nom[][TAM_NOMBRE], int viajes[], int activo[], int *n, int codigo, const char nombre[], int cantidad){
+  //guardar el codigo
+  cod[*n] = codigo;
+  //guardar el nombre 
+  strcpy(nom[*n], nombre);
+  //guardar los viajes 
+  viajes[*n] = cantidad;
+  //pase activo
+  activo[*n] = 1;
+  //procimo pase a posicion siguiente
+  (*n)++;
+}
+
+//pases activos y cuantos son 
+void consultar(const int cod[], const char nom[][TAM_NOMBRE], const int viajes[], const int activo[], int n){
+  //indice del contador 
+  int i, activos = 0;
+
+  //encabezado de la tabla
+  printf("%-6s %-12s %6s\n","Codigo","Nombre","Viajes disponibles");
+  //recorrer los espacios usados
+  for (i = 0; i < n; i++) {
+    //solo activos 
+    if (activo[i] == 1) {
+      printf("%-6d %-12s %6d\n",cod[i],nom[i],viajes[i]);
+      //cuenta pases
+      activos++;
+    }
+  }
+  //mostrar total 
+  printf("Pases activos: %d\n",activos);
+}
+
+//registrar viajes si quedan
+int usarViaje(int*viajes){
+  //revisar si quedan viajes 
+  if (*viajes == 0) {
+    //no registra
+    return 0;
+  }
+  //cambio en el arreglo 
+  (*viajes)--;
+  return 1;   //para confirmar desde main
+}
+
+//dar de baja
+void daDeBaja(int *activo){
+  //se marca como inactivo
+  *activo = 0;
+}
