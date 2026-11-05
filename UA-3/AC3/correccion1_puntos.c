@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-void sumarPuntos(int puntos, int compra) {
-    puntos = puntos + compra / 1000;
-    
+void sumarPuntos(int *puntos, int compra) {
+    *puntos = puntos + compra / 1000;
+    printf("Puntos acumulados: %d\n", puntos);//corri este aqui para saber si estaba haciento la suma 
 }
 
 int main(void) {
-    int puntos = 0, compra, i;
-
+    int puntos = 0, compra, i;//faltaba * para dar direccion 
     for (i = 1; i <= 3; i++) {
         printf("Compra %d: ", i);
-        scanf("%d", compra);
-        sumarPuntos(puntos, compra);
+        scanf("%d", &compra);//faltaba & y daba un error de segmentacion 
+
+        sumarPuntos(&puntos, compra);
     }
-    printf("Puntos acumulados: %d\n", puntos);
+    printf("Puntos acumulados: %d\n", &puntos);//faltaba &
     return 0;
 }

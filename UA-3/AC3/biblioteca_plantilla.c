@@ -27,7 +27,7 @@ int buscarCodigo(const int cod[], const int activo[], int n, int codigo);
 void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
              int *n, int codigo, const char titulo[], int ejemplares);
 void consultar(const int cod[], const char tit[][TAM_TITULO],
-               const int disp[], const int activo[], int n);
+            const int disp[], const int activo[], int n);
 int prestar(int *disponibles);
 void darDeBaja(int *activo);
 
@@ -51,7 +51,7 @@ int main(void) {
             pos = buscarCodigo(cod, activo, n, codigo);
             if (pos == -1) {
                 printf("No existe un libro activo con el codigo %d\n",
-                       codigo);
+                    codigo);
                 continue;
             }
         }
@@ -81,10 +81,10 @@ int main(void) {
                 // &disp[pos]: la DIRECCION de los disponibles de ese libro
                 if (prestar(&disp[pos]))
                     printf("Prestado. Disponibles de %s: %d\n", tit[pos],
-                           disp[pos]);
+                            disp[pos]);
                 else
                     printf("No hay ejemplares disponibles de %s\n",
-                           tit[pos]);
+                            tit[pos]);
                 break;
             case 4:
                 // &activo[pos]: la DIRECCION del estado de ese libro
@@ -93,7 +93,7 @@ int main(void) {
                 break;
             case 5:
                 printf("%d %s: %d disponibles\n", cod[pos], tit[pos],
-                       disp[pos]);
+                        disp[pos]);
                 break;
             default:
                 printf("Hasta luego\n");
@@ -120,7 +120,17 @@ int leerEntero(const char mensaje[], int minimo, int maximo) {
 //   4. Despues del for, devuelva -1 (no esta).
 int buscarCodigo(const int cod[], const int activo[], int n, int codigo) {
     // escriba aqui su codigo
-    return -1;
+
+    int i;
+    for ( i = 0; i < n; i++)
+    {
+        if (cod[i]==codigo &&activo[i]==1)
+        {
+            return i;
+        }else
+            return -1;
+    }
+
 }
 
 // TAREA 2 · Guarda un libro nuevo en la primera posicion libre.
@@ -134,6 +144,19 @@ int buscarCodigo(const int cod[], const int activo[], int n, int codigo) {
 void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
              int *n, int codigo, const char titulo[], int ejemplares) {
     // escriba aqui su codigo
+
+        //guarda el codigo
+    cod[*n] = codigo;
+    //guardar el nombre
+    strcpy(tit[*n], titulo);
+
+    //guardar cantidades
+    disp[*n] = ejemplares;
+
+    //disponibles 
+    activo[*n] = 1;
+
+    (*n)++;
 }
 
 // TAREA 3 · Muestra los libros activos y cuantos son.
@@ -144,8 +167,21 @@ void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
 //      disp[i] y sume 1 al contador.
 //   4. Al final muestre "Libros activos: " y el contador.
 void consultar(const int cod[], const char tit[][TAM_TITULO],
-               const int disp[], const int activo[], int n) {
+                const int disp[], const int activo[], int n) {
     // escriba aqui su codigo
+    int i, activos = 0;//contador y variables inicializadas 
+
+    //tabla
+    printf("%d %-12s %d \n",cod[i], tit[i] ,disp[i],i+1);
+
+    for ( i = 0; i < n; i++)
+    {
+    if (disp[i]==1)
+    {
+        printf("%d %-12s %d \n",disp[i],tit[i],activo[i]);
+    }
+    }
+    
 }
 
 // TAREA 4 · Presta un ejemplar si hay disponibles.
@@ -155,7 +191,13 @@ void consultar(const int cod[], const char tit[][TAM_TITULO],
 //   2. Si no, reste uno con (*disponibles)--; y devuelva 1.
 int prestar(int *disponibles) {
     // escriba aqui su codigo
-    return 0;
+
+    if (*disponibles == 0)
+    {
+        return 0;
+        (*disponibles)--;
+        return 1;
+    }
 }
 
 // TAREA 5 · Da de baja un libro (eliminacion logica).
@@ -163,4 +205,7 @@ int prestar(int *disponibles) {
 // PASO: ponga el estado en 0 con *activo = 0;
 void darDeBaja(int *activo) {
     // escriba aqui su codigo
+    
+    //se supone que se marca comop inactivo 
+     *activo = 0;
 }
