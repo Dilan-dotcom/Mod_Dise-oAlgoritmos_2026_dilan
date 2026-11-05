@@ -62,7 +62,7 @@ int main(void) {
                     break;
                 }
                 codigo = leerEntero("Codigo", COD_MIN, COD_MAX);
-                if (buscarCodigo(cod, activo, n, codigo) != -1) {
+                if (buscarCodigo(cod, activo, n, codigo) != 1) {
                     printf("El codigo %d ya existe\n", codigo);
                     break;
                 }
@@ -121,7 +121,7 @@ int leerEntero(const char mensaje[], int minimo, int maximo) {
 int buscarCodigo(const int cod[], const int activo[], int n, int codigo) {
     // escriba aqui su codigo
 
-    int i;
+    int i;//ciclo para recorrer
     for ( i = 0; i < n; i++)
     {
         if (cod[i]==codigo &&activo[i]==1)
