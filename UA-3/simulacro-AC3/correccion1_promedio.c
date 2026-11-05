@@ -3,7 +3,7 @@
 double promedio(const int notas[], int n) {
     int i, suma = 0;
     for (i = 0; i < n; i++)
-        suma = notas[i];
+        suma += notas[i];
     return suma / n;
 }
 
