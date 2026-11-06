@@ -27,7 +27,7 @@ int buscarCodigo(const int cod[], const int activo[], int n, int codigo);
 void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
              int *n, int codigo, const char titulo[], int ejemplares);
 void consultar(const int cod[], const char tit[][TAM_TITULO],
-               const int disp[], const int activo[], int n);
+                const int disp[], const int activo[], int n);
 int prestar(int *disponibles);
 void darDeBaja(int *activo);
 
@@ -55,7 +55,7 @@ int main(void)
             if (pos == -1)
             {
                 printf("No existe un libro activo con el codigo %d\n",
-                       codigo);
+                        codigo);
                 continue;
             }
         }
@@ -68,7 +68,7 @@ int main(void)
                 break;
             }
             codigo = leerEntero("Codigo", COD_MIN, COD_MAX);
-            if (buscarCodigo(cod, activo, n, codigo) != -1)
+            if (buscarCodigo(cod, activo, n, codigo) != -1)//el menos uno que altere 
             {
                 printf("El codigo %d ya existe\n", codigo);
                 break;
@@ -88,10 +88,10 @@ int main(void)
             // &disp[pos]: la DIRECCION de los disponibles de ese libro
             if (prestar(&disp[pos]))
                 printf("Prestado. Disponibles de %s: %d\n", tit[pos],
-                       disp[pos]);
+                        disp[pos]);
             else
                 printf("No hay ejemplares disponibles de %s\n",
-                       tit[pos]);
+                        tit[pos]);
             break;
         case 4:
             // &activo[pos]: la DIRECCION del estado de ese libro
@@ -100,7 +100,7 @@ int main(void)
             break;
         case 5:
             printf("%d %s: %d disponibles\n", cod[pos], tit[pos],
-                   disp[pos]);
+                    disp[pos]);
             break;
         default:
             printf("Hasta luego\n");
@@ -156,6 +156,15 @@ void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
 {
     // escriba aqui su codigo
     cod[*n] = codigo;
+    //guarda el codigo
+    strcpy(tit[*n], titulo);
+    //guardar el nombre
+    strcpy(tit[*n], titulo);
+    //guardar cantidades
+    disp[*n] = ejemplares;
+    //disponibles 
+    activo[*n] = 1;
+    (*n)++;
 
 }
 
@@ -167,9 +176,29 @@ void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
 //      disp[i] y sume 1 al contador.
 //   4. Al final muestre "Libros activos: " y el contador.
 void consultar(const int cod[], const char tit[][TAM_TITULO],
-               const int disp[], const int activo[], int n)
+            const int disp[], const int activo[], int n)
 {
     // escriba aqui su codigo
+    int i , activos =0;
+    //elimine el printf que usaba el i sin inicializar para evitar el segmentation default 
+    //encabezado tipo tabla 
+    printf("%-6s %-12s %18s\n", "Codigo", "Titulo", "Disponibles");
+
+    for ( i = 0; i < n; i++)
+    {
+        
+        if (activo[i] == 1)
+        {
+            /* se va a evaluar el activo[i] y no disp[i]  */
+            printf("%-6d %-12s %18d\n", cod[i], tit[i], disp[i]);
+            activos++;
+        }
+        
+
+    }
+    //se muestra el total de libros activos a fuera del for
+    printf("Libros activos: %d\n", activos);
+
 }
 
 // TAREA 4 · Presta un ejemplar si hay disponibles.
@@ -180,7 +209,13 @@ void consultar(const int cod[], const char tit[][TAM_TITULO],
 int prestar(int *disponibles)
 {
     // escriba aqui su codigo
-    return 0;
+    //Se evalúa primero si es 0 para retornar 0.
+    if (*disponibles == 0) {
+        return 0;
+    }
+    //Se resta  despues de validar y se devuelve 1 para confirmar.
+    (*disponibles)--;
+    return 1;
 }
 
 // TAREA 5 · Da de baja un libro (eliminacion logica).
@@ -189,4 +224,5 @@ int prestar(int *disponibles)
 void darDeBaja(int *activo)
 {
     // escriba aqui su codigo
+    *activo = 0;
 }
