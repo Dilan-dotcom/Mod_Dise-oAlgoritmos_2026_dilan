@@ -4,7 +4,7 @@
 
 int buscar(const char nombres[][15], int n, const char buscado[]) {
     int i;
-    for (i = 0; i <= N; i++)//el limite estaba puesto en minuscola y la constante es en mayuscula
+    for (i = 0; i < N; i++)//el limite estaba puesto en minuscola y la constante es en mayuscula
         if (strcmp(nombres[i],buscado)==0)//la funcion para comparar cadenas no es como estaba antes  seb tiene que usar la herramienta strcmp porruqe es lo ideal 
             return i;
             
