@@ -4,9 +4,11 @@
 
 int buscar(const char nombres[][15], int n, const char buscado[]) {
     int i;
-    for (i = 0; i <= n; i++)
-        if (nombres[i] == buscado)
+    for (i = 0; i < n; i++){//se quito el igual porque con el daba desbordamiento
+        if (strcmp(nombres[i],buscado)==0){//la funcion para comparar cadenas no es como estaba antes  seb tiene que usar la herramienta strcmp porruqe es lo ideal 
             return i;
+    }
+}
     return -1;
 }
 
