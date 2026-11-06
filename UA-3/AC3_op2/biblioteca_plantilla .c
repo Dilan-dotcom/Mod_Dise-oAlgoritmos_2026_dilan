@@ -108,7 +108,7 @@ int main(void)
     } while (opcion != 0);
     return 0;
 }
-
+// Qué hace: Pide un número por pantalla asegurándose de que esté dentro de un rango mínimo y máximo permitido, repitiéndose con un ciclo do-while si el usuario ingresa un valor incorrecto
 int leerEntero(const char mensaje[], int minimo, int maximo)
 {
     int valor;
@@ -119,7 +119,7 @@ int leerEntero(const char mensaje[], int minimo, int maximo)
     } while (valor < minimo || valor > maximo);// Se repite si el valor no es válido
     return valor;
 }
-
+// Qué hace: Recorre el arreglo de códigos buscando uno específico que además esté marcado como activo (1). Si lo encuentra, devuelve su posición; si no, retorna -1.
 int buscarCodigo(const int cod[], const int activo[], int n, int codigo)
 {
 
@@ -136,7 +136,7 @@ int buscarCodigo(const int cod[], const int activo[], int n, int codigo)
     // corregi el return -1 por mala posicion
     return -1;
 }
-
+// Qué hace: Registra un nuevo libro aprovechando la siguiente posición libre indicada por n, guardando su código, el título copiado, los ejemplares y el estado activo (1), para luego incrementar el contador de elementos.
 void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
              int *n, int codigo, const char titulo[], int ejemplares)
 {
@@ -151,7 +151,7 @@ void incluir(int cod[], char tit[][TAM_TITULO], int disp[], int activo[],
     activo[*n] = 1;
     (*n)++;
 }
-
+// Qué hace: Imprime una tabla organizada con los datos de todos los libros que se encuentran activos actualmente y muestra al final el conteo total de los mismos.
 void consultar(const int cod[], const char tit[][TAM_TITULO],
             const int disp[], const int activo[], int n)
 {
@@ -173,7 +173,7 @@ void consultar(const int cod[], const char tit[][TAM_TITULO],
     // se muestra el total de libros activos a fuera del for
     printf("Libros activos: %d\n", activos);
 }
-
+// Qué hace: Verifica si quedan ejemplares disponibles. Si es así, descuenta uno utilizando punteros y devuelve 1 (éxito); de lo contrario, retorna 0 (sin existencias).
 int prestar(int *disponibles)
 {
 
@@ -186,9 +186,9 @@ int prestar(int *disponibles)
     (*disponibles)--;
     return 1;
 }
-
+// Qué hace: Modifica el estado del libro apuntado a 0 mediante punteros, haciendo que deje de aparecer automáticamente en las consultas y búsquedas del sistema.
 void darDeBaja(int *activo)
 {
-    //se supone que se marca comop inactivo
+    //se supone que se marca como inactivo
     *activo = 0;
 }

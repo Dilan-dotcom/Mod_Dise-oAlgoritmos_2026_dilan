@@ -11,6 +11,6 @@ int main(void) {
         scanf("%d", &compra);//mismo &
         sumarPuntos(&puntos, compra);//fataba y me equivoque de lugar 
     }
-    printf("Puntos acumulados: %d\n", puntos);//le puse aquui uno que no hiba 
+    printf("Puntos acumulados: %d\n", puntos);//le puse aqui un & que no hiba 
     return 0;
 }
